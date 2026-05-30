@@ -81295,7 +81295,7 @@ s=p}for(;;)switch(s){case 0:d=a==null?n.d.a.a:a
 if(J.bY(d)===0){s=1
 break}n.al(new A.afA(n,d))
 p=4
-m=A.eB("https://anything-knights-sources-prison.trycloudflare.com /chat",0,null)
+m=A.eB("https://anything-knights-sources-prison.trycloudflare.com/chat",0,null)
 A.W2("\ud83d\udce1 Sending request to: "+A.j(m))
 h=t.N
 g=A.ah(["Content-Type","application/json","Accept","application/json"],h,h)
@@ -81347,7 +81347,7 @@ m=g
 l=h.gb5(i).b
 n.al(new A.afu(n,m,l))
 p=5
-k=A.aFm("POST",A.eB("https://anything-knights-sources-prison.trycloudflare.com /upload-file?session_id=user_session_001",0,null))
+k=A.aFm("POST",A.eB("https://anything-knights-sources-prison.trycloudflare.com/upload-file?session_id=user_session_001",0,null))
 i=k.y
 h=m
 g=A.avy(h,t.Cm)
@@ -81378,7 +81378,7 @@ qz(a,b,c){return this.Xr(a,b,c)},
 Xr(a,b,c){var s=0,r=A.P(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
 var $async$qz=A.L(function(d,e){if(d===1){p.push(e)
 s=q}for(;;)switch(s){case 0:q=3
-l=A.eB("https://anything-knights-sources-prison.trycloudflare.com /feedback",0,null)
+l=A.eB("https://anything-knights-sources-prison.trycloudflare.com/feedback",0,null)
 k=t.N
 j=A.ah(["Content-Type","application/json"],k,k)
 s=6

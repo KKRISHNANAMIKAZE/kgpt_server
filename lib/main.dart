@@ -40,7 +40,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://means-maintenance-roger-pix.trycloudflare.com"; 
+  final String baseUrl = "https://directors-removing-twist-wrist.trycloudflare.com"; 
   final String sessionId = "user_session_001";
 
   // ================= CHAT =================
@@ -451,13 +451,24 @@ class ChatBubble extends StatelessWidget {
         width: MediaQuery.of(context).size.width*0.75,
 
         decoration: BoxDecoration(
-          color: const Color(0xFF333333),
+          color: isUser ? const Color(0xFF1E88E5) : const Color(0xFF222222),
           borderRadius: BorderRadius.circular(20),
         ),
 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SelectableText(
+                message["text"] ?? "",
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  height: 1.4,
+                ),
+              ),
+
+  const SizedBox(height: 8),
 
             if (!isUser)
   Padding(

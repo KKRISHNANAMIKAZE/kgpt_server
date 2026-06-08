@@ -34,11 +34,13 @@ class _ChatScreenState extends State<ChatScreen> {
   List<Map<String, dynamic>> messages = [];
 
   bool isLoading = false;
+  double totalCarbon = 0.0;
+  double totalWater = 0.0;
 
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://means-maintenance-roger-pix.trycloudflare.com"; 
+  final String baseUrl = "https://russia-suppliers-operators-captured.trycloudflare.com"; 
   final String sessionId = "user_session_001";
 
   // ================= CHAT =================
@@ -86,14 +88,29 @@ class _ChatScreenState extends State<ChatScreen> {
 
       String botReply = data["response"] ?? "No response";
 
-      setState(() {
-        messages.add({
-          "role": "assistant",
-          "text": botReply,
-          "sources": data["sources"] ?? [],
-          "suggestions": data["suggestions"] ?? []
-        });
-      });
+
+      double carbon =
+    (data["carbon_emission"] ?? 0).toDouble();
+
+double water =
+    (data["water_usage"] ?? 0).toDouble();
+
+setState(() {
+
+  totalCarbon += carbon;
+  totalWater += water;
+
+  messages.add({
+    "role": "assistant",
+    "text": botReply,
+    "sources": data["sources"] ?? [],
+    "suggestions": data["suggestions"] ?? [],
+    "carbon": carbon,
+    "water": water,
+  });
+
+});
+
 
       // AUTO RETRY
       if (botReply.contains("System starting")) {
@@ -264,7 +281,47 @@ class _ChatScreenState extends State<ChatScreen> {
 
               const SizedBox(height: 50),
 
-              Image.asset("assets/kgpt_logo.png",height: 60),
+              Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+
+    const SizedBox(width: 10),
+
+    Image.asset(
+      "assets/kgpt_logo.png",
+      height: 60,
+    ),
+
+    Container(
+      margin: const EdgeInsets.only(right: 15),
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.black54,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            "🌱 ${totalCarbon.toStringAsFixed(2)} g",
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+            ),
+          ),
+          Text(
+            "💧 ${totalWater.toStringAsFixed(2)} mL",
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+            ),
+          ),
+        ],
+      ),
+    ),
+
+  ],
+),
 
               Expanded(
                 child: ListView.builder(
@@ -402,10 +459,33 @@ class ChatBubble extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Text(
-              message["text"]??"",
-              style: const TextStyle(color: Colors.white,fontSize:15),
-            ),
+            if (!isUser)
+  Padding(
+    padding: const EdgeInsets.only(top: 8),
+    child: Row(
+      children: [
+
+        Text(
+          "🌱 ${message["carbon"] ?? 0} g CO₂e",
+          style: const TextStyle(
+            color: Colors.greenAccent,
+            fontSize: 11,
+          ),
+        ),
+
+        const SizedBox(width: 12),
+
+        Text(
+          "💧 ${message["water"] ?? 0} mL",
+          style: const TextStyle(
+            color: Colors.lightBlueAccent,
+            fontSize: 11,
+          ),
+        ),
+
+      ],
+    ),
+  ),
 
             if(!isUser &&
                 message["sources"]!=null &&

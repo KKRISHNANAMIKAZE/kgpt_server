@@ -81559,7 +81559,7 @@ s=p}for(;;)switch(s){case 0:b=a0==null?n.d.a.a:a0
 if(J.bZ(b)===0){s=1
 break}n.ak(new A.afJ(n,b))
 p=4
-m=A.eC("https://directors-removing-twist-wrist.trycloudflare.com/chat",0,null)
+m=A.eC("https://indie-stock-denied-gained.trycloudflare.com/chat",0,null)
 A.Wa("\ud83d\udce1 Sending request to: "+A.j(m))
 f=t.N
 e=A.ah(["Content-Type","application/json","Accept","application/json"],f,f)
@@ -81615,7 +81615,7 @@ m=g
 l=h.gb7(i).b
 n.ak(new A.afD(n,m,l))
 p=5
-k=A.aFy("POST",A.eC("https://directors-removing-twist-wrist.trycloudflare.com/upload-file?session_id=user_session_001",0,null))
+k=A.aFy("POST",A.eC("https://indie-stock-denied-gained.trycloudflare.com/upload-file?session_id=user_session_001",0,null))
 i=k.y
 h=m
 g=A.avN(h,t.Cm)
@@ -81646,7 +81646,7 @@ qC(a,b,c){return this.XF(a,b,c)},
 XF(a,b,c){var s=0,r=A.P(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
 var $async$qC=A.L(function(d,e){if(d===1){p.push(e)
 s=q}for(;;)switch(s){case 0:q=3
-l=A.eC("https://directors-removing-twist-wrist.trycloudflare.com/feedback",0,null)
+l=A.eC("https://indie-stock-denied-gained.trycloudflare.com/feedback",0,null)
 k=t.N
 j=A.ah(["Content-Type","application/json"],k,k)
 s=6

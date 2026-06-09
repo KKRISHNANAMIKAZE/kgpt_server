@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:file_picker/file_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() => runApp(const KGPTApp());
 
@@ -40,8 +41,9 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://launch-resolution-selective-controller.trycloudflare.com"; 
-  final String sessionId = "user_session_001";
+  final String baseUrl = "https://dancing-supporters-harvard-organisations.trycloudflare.com"; 
+  String get sessionId =>
+    FirebaseAuth.instance.currentUser?.uid ?? "guest";
 
   // ================= CHAT =================
 

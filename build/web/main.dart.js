@@ -81557,7 +81557,7 @@ if(J.bZ(a1)===0){s=1
 break}n.ak(new A.afK(n,a1))
 p=4
 f={}
-m=A.eC("https://beach-physically-cedar-optimization.trycloudflare.com/chat",0,null)
+m=A.eC("https://did-enquiries-ruby-campbell.trycloudflare.com/chat",0,null)
 A.jt("SEND MESSAGE STARTED")
 A.jt("UID TEST DISABLED")
 A.jt("SESSION ID: test_user")
@@ -81622,7 +81622,7 @@ m=g
 l=h.gb7(i).b
 n.ak(new A.afE(n,m,l))
 p=5
-k=A.aFx("POST",A.eC("https://beach-physically-cedar-optimization.trycloudflare.com/upload-file?session_id=test_user",0,null))
+k=A.aFx("POST",A.eC("https://did-enquiries-ruby-campbell.trycloudflare.com/upload-file?session_id=test_user",0,null))
 i=k.y
 h=m
 g=A.avL(h,t.Cm)
@@ -81653,7 +81653,7 @@ qC(a,b,c){return this.XE(a,b,c)},
 XE(a,b,c){var s=0,r=A.P(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
 var $async$qC=A.L(function(d,e){if(d===1){p.push(e)
 s=q}for(;;)switch(s){case 0:q=3
-l=A.eC("https://beach-physically-cedar-optimization.trycloudflare.com/feedback",0,null)
+l=A.eC("https://did-enquiries-ruby-campbell.trycloudflare.com/feedback",0,null)
 k=t.N
 j=A.ah(["Content-Type","application/json"],k,k)
 s=6

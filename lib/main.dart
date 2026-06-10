@@ -41,7 +41,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://dancing-supporters-harvard-organisations.trycloudflare.com"; 
+  final String baseUrl = "https://medicaid-civilian-reflects-award.trycloudflare.com"; 
   String get sessionId =>
     FirebaseAuth.instance.currentUser?.uid ?? "guest";
 
@@ -105,8 +105,12 @@ setState(() {
   messages.add({
     "role": "assistant",
     "text": botReply,
-    "sources": data["sources"] ?? [],
-    "suggestions": data["suggestions"] ?? [],
+    "sources": data["sources"] is List
+        ? data["sources"]
+        : [],
+    "suggestions": data["suggestions"] is List
+        ? data["suggestions"]
+        : [],
     "carbon": carbon,
     "water": water,
   });

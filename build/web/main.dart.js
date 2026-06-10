@@ -82360,7 +82360,7 @@ s=p}for(;;)switch(s){case 0:b=a0==null?n.d.a.a:a0
 if(J.c0(b)===0){s=1
 break}n.ak(new A.agQ(n,b))
 p=4
-m=A.eF("https://dancing-supporters-harvard-organisations.trycloudflare.com/chat",0,null)
+m=A.eF("https://medicaid-civilian-reflects-award.trycloudflare.com/chat",0,null)
 A.WS("\ud83d\udce1 Sending request to: "+A.j(m))
 f=t.N
 e=A.aj(["Content-Type","application/json","Accept","application/json"],f,f)
@@ -82416,7 +82416,7 @@ m=g
 l=h.gb7(i).b
 n.ak(new A.agK(n,m,l))
 p=5
-k=A.aGX("POST",A.eF("https://dancing-supporters-harvard-organisations.trycloudflare.com/upload-file?session_id="+n.gJx(),0,null))
+k=A.aGX("POST",A.eF("https://medicaid-civilian-reflects-award.trycloudflare.com/upload-file?session_id="+n.gJx(),0,null))
 i=k.y
 h=m
 g=A.ax2(h,t.Cm)
@@ -82447,7 +82447,7 @@ qH(a,b,c){return this.XW(a,b,c)},
 XW(a,b,c){var s=0,r=A.N(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
 var $async$qH=A.J(function(d,e){if(d===1){p.push(e)
 s=q}for(;;)switch(s){case 0:q=3
-l=A.eF("https://dancing-supporters-harvard-organisations.trycloudflare.com/feedback",0,null)
+l=A.eF("https://medicaid-civilian-reflects-award.trycloudflare.com/feedback",0,null)
 k=t.N
 j=A.aj(["Content-Type","application/json"],k,k)
 s=6
@@ -82487,17 +82487,16 @@ s.d.ow(B.O8)
 s.r=!0},
 $S:0}
 A.agR.prototype={
-$0(){var s,r,q,p,o=this,n=o.a,m=o.b
-n.w=n.w+m
-s=o.c
-n.x=n.x+s
-r=o.e
+$0(){var s,r,q,p,o,n=this,m="suggestions",l=n.a,k=n.b
+l.w=l.w+k
+s=n.c
+l.x=l.x+s
+r=n.e
 q=J.ay(r)
-p=q.h(r,"sources")
-if(p==null)p=[]
-r=q.h(r,"suggestions")
-if(r==null)r=[]
-n.f.push(A.aj(["role","assistant","text",o.d,"sources",p,"suggestions",r,"carbon",m,"water",s],t.N,t.z))},
+p=t.j
+o=p.b(q.h(r,"sources"))?q.h(r,"sources"):[]
+r=p.b(q.h(r,m))?q.h(r,m):[]
+l.f.push(A.aj(["role","assistant","text",n.d,"sources",o,"suggestions",r,"carbon",k,"water",s],t.N,t.z))},
 $S:0}
 A.agS.prototype={
 $0(){this.a.f.push(A.aj(["role","assistant","text","\u26a0\ufe0f Server is waking up or unreachable. Please try again."],t.N,t.z))},

@@ -41,7 +41,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://medicaid-civilian-reflects-award.trycloudflare.com"; 
+  final String baseUrl = "https://plan-hawaii-authorities-wine.trycloudflare.com"; 
   String get sessionId =>
     FirebaseAuth.instance.currentUser?.uid ?? "guest";
 
@@ -63,6 +63,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
       final uri = Uri.parse("$baseUrl/chat");
 
+      print("UID: ${FirebaseAuth.instance.currentUser?.uid}");
+      print("SESSION ID: $sessionId");
       print("📡 Sending request to: $uri");
 
       final response = await http
@@ -86,16 +88,30 @@ class _ChatScreenState extends State<ChatScreen> {
         throw Exception("Server error: ${response.statusCode}");
       }
 
-      final data = jsonDecode(response.body);
+      print("RAW RESPONSE:");
+      print(response.body);
+
+      dynamic data;
+
+      try {
+        data = jsonDecode(response.body);
+      } catch (e) {
+        print("JSON ERROR: $e");
+        rethrow;
+      }
 
       String botReply = data["response"] ?? "No response";
 
 
       double carbon =
-    (data["carbon_emission"] ?? 0).toDouble();
+    double.tryParse(
+      data["carbon_emission"].toString(),
+    ) ?? 0.0;
 
 double water =
-    (data["water_usage"] ?? 0).toDouble();
+    double.tryParse(
+      data["water_usage"].toString(),
+    ) ?? 0.0;
 
 setState(() {
 
@@ -516,8 +532,11 @@ class ChatBubble extends StatelessWidget {
                     message["sources"].length,
                         (i){
 
-                      String citation = message["sources"][i]["citation"];
-                      String link = message["sources"][i]["link"] ?? "";
+                      String citation =
+                          message["sources"][i]["citation"]?.toString() ?? "";
+
+                      String link =
+                          message["sources"][i]["link"]?.toString() ?? "";
 
                       return GestureDetector(
                         onTap: (){

@@ -41,7 +41,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://harvard-doe-important-led.trycloudflare.com"; 
+  final String baseUrl = "https://beach-physically-cedar-optimization.trycloudflare.com"; 
   //String get sessionId =>
    // FirebaseAuth.instance.currentUser?.uid ?? "guest";
   final String sessionId = "test_user";
@@ -65,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
       final uri = Uri.parse("$baseUrl/chat");
 
       print("SEND MESSAGE STARTED");
-      print("UID: ${FirebaseAuth.instance.currentUser?.uid}");
+      print("UID TEST DISABLED");
       print("SESSION ID: $sessionId");
       print("📡 Sending request to: $uri");
     

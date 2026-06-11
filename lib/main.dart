@@ -42,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://partially-maker-competent-mailto.trycloudflare.com"; 
+  final String baseUrl = "https://provincial-treated-territories-responses.trycloudflare.com"; 
   //String get sessionId =>
    // FirebaseAuth.instance.currentUser?.uid ?? "guest";
   String sessionId = "";
@@ -73,6 +73,11 @@ class _ChatScreenState extends State<ChatScreen> {
   // ================= CHAT =================
 
   Future<void> sendMessage([String? overrideText]) async {
+
+    if (sessionId.isEmpty) {
+      print("User ID not initialized yet");
+      return;
+    }
 
     String userText = overrideText ?? controller.text;
 

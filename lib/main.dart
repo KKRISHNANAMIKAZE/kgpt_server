@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:file_picker/file_picker.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uuid/uuid.dart';
 
 void main() => runApp(const KGPTApp());
 
@@ -41,10 +42,33 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://did-enquiries-ruby-campbell.trycloudflare.com"; 
+  final String baseUrl = "https://frequency-incomplete-canvas-precisely.trycloudflare.com"; 
   //String get sessionId =>
    // FirebaseAuth.instance.currentUser?.uid ?? "guest";
-  final String sessionId = "test_user";
+  String sessionId = "";
+
+  
+  @override
+  void initState() {
+    super.initState();
+    initializeUser();
+  }
+
+  Future<void> initializeUser() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? savedId = prefs.getString("user_id");
+
+    if (savedId == null) {
+      savedId = const Uuid().v4();
+      await prefs.setString("user_id", savedId);
+    }
+
+    setState(() {
+      sessionId = savedId!;
+    });
+
+    print("USER ID: $sessionId");
+  }
 
   // ================= CHAT =================
 
@@ -65,8 +89,7 @@ class _ChatScreenState extends State<ChatScreen> {
       final uri = Uri.parse("$baseUrl/chat");
 
       print("SEND MESSAGE STARTED");
-      print("UID TEST DISABLED");
-      print("SESSION ID: $sessionId");
+      print("USER ID: $sessionId");
       print("📡 Sending request to: $uri");
     
 

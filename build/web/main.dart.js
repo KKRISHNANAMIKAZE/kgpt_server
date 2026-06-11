@@ -81709,7 +81709,7 @@ if(J.bZ(a1)===0){s=1
 break}n.ai(new A.afT(n,a1))
 p=4
 f={}
-m=A.eC("https://frequency-incomplete-canvas-precisely.trycloudflare.com/chat",0,null)
+m=A.eC("https://partially-maker-competent-mailto.trycloudflare.com/chat",0,null)
 A.jt("SEND MESSAGE STARTED")
 A.jt("USER ID: "+n.as)
 A.jt("\ud83d\udce1 Sending request to: "+A.j(m))
@@ -81773,7 +81773,7 @@ m=g
 l=h.gb7(i).b
 n.ai(new A.afN(n,m,l))
 p=5
-k=A.aFO("POST",A.eC("https://frequency-incomplete-canvas-precisely.trycloudflare.com/upload-file?session_id="+n.as,0,null))
+k=A.aFO("POST",A.eC("https://partially-maker-competent-mailto.trycloudflare.com/upload-file?session_id="+n.as,0,null))
 i=k.y
 h=m
 g=A.avW(h,t.Cm)
@@ -81804,7 +81804,7 @@ qD(a,b,c){return this.XJ(a,b,c)},
 XJ(a,b,c){var s=0,r=A.N(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
 var $async$qD=A.J(function(d,e){if(d===1){p.push(e)
 s=q}for(;;)switch(s){case 0:q=3
-l=A.eC("https://frequency-incomplete-canvas-precisely.trycloudflare.com/feedback",0,null)
+l=A.eC("https://partially-maker-competent-mailto.trycloudflare.com/feedback",0,null)
 k=t.N
 j=A.ag(["Content-Type","application/json"],k,k)
 s=6

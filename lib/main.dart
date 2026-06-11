@@ -42,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://frequency-incomplete-canvas-precisely.trycloudflare.com"; 
+  final String baseUrl = "https://partially-maker-competent-mailto.trycloudflare.com"; 
   //String get sessionId =>
    // FirebaseAuth.instance.currentUser?.uid ?? "guest";
   String sessionId = "";

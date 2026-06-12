@@ -42,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://provincial-treated-territories-responses.trycloudflare.com"; 
+  final String baseUrl = "https://pairs-flights-fred-could.trycloudflare.com"; 
   //String get sessionId =>
    // FirebaseAuth.instance.currentUser?.uid ?? "guest";
   String sessionId = "";
@@ -55,19 +55,41 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> initializeUser() async {
-    final prefs = await SharedPreferences.getInstance();
-    String? savedId = prefs.getString("user_id");
+    try {
 
-    if (savedId == null) {
-      savedId = const Uuid().v4();
-      await prefs.setString("user_id", savedId);
+      print("INIT START");
+
+      final prefs = await SharedPreferences.getInstance();
+
+      print("PREFS OK");
+
+      String? savedId = prefs.getString("user_id");
+
+      print("SAVED ID = $savedId");
+
+      if (savedId == null || savedId.isEmpty) {
+
+        savedId = const Uuid().v4();
+
+        print("NEW ID = $savedId");
+
+        await prefs.setString(
+          "user_id",
+          savedId,
+        );
+      }
+
+      setState(() {
+        sessionId = savedId!;
+      });
+
+      print("SESSION SET = $sessionId");
+
+    } catch (e) {
+
+      print("INIT ERROR = $e");
+
     }
-
-    setState(() {
-      sessionId = savedId!;
-    });
-
-    print("USER ID: $sessionId");
   }
 
   // ================= CHAT =================

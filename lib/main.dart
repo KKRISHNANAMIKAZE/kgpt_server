@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:file_picker/file_picker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:html' as html;
 import 'package:uuid/uuid.dart';
 
 void main() => runApp(const KGPTApp());
@@ -42,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://pairs-flights-fred-could.trycloudflare.com"; 
+  final String baseUrl = "https://electro-continuously-identifying-tour.trycloudflare.com"; 
   //String get sessionId =>
    // FirebaseAuth.instance.currentUser?.uid ?? "guest";
   String sessionId = "";
@@ -55,28 +55,22 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> initializeUser() async {
+
     try {
 
       print("INIT START");
 
-      final prefs = await SharedPreferences.getInstance();
-
-      print("PREFS OK");
-
-      String? savedId = prefs.getString("user_id");
-
-      print("SAVED ID = $savedId");
+      String? savedId =
+          html.window.localStorage['user_id'];
 
       if (savedId == null || savedId.isEmpty) {
 
         savedId = const Uuid().v4();
 
-        print("NEW ID = $savedId");
+        html.window.localStorage['user_id'] =
+            savedId;
 
-        await prefs.setString(
-          "user_id",
-          savedId,
-        );
+        print("NEW USER CREATED");
       }
 
       setState(() {
@@ -90,6 +84,7 @@ class _ChatScreenState extends State<ChatScreen> {
       print("INIT ERROR = $e");
 
     }
+
   }
 
   // ================= CHAT =================
@@ -215,7 +210,7 @@ setState(() {
 
   Future<void> pickFile() async {
 
-    FilePickerResult? result = await FilePicker.platform.pickFiles(
+    FilePickerResult? result = await FilePicker.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['pdf','txt','docx'],
       withData: true,

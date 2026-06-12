@@ -83680,7 +83680,7 @@ for(;;)switch(s){case 0:l=p.as
 if(l.length===0){s=1
 break}A.dL("LOADING HISTORY FOR "+l)
 s=3
-return A.R(A.aQL(A.ew("https://rings-oklahoma-dna-sending.trycloudflare.com/history/"+p.as,0,null)),$async$z6)
+return A.R(A.aQL(A.ew("https://publication-gods-delete-let.trycloudflare.com/history/"+p.as,0,null)),$async$z6)
 case 3:o=b
 l=o.e
 n=A.Gb(A.G4(l))
@@ -83701,7 +83701,7 @@ if(J.bY(m)===0){s=1
 break}n.ai(new A.aiE(n,m))
 p=4
 e={}
-l=A.ew("https://rings-oklahoma-dna-sending.trycloudflare.com/chat",0,null)
+l=A.ew("https://publication-gods-delete-let.trycloudflare.com/chat",0,null)
 A.dL("SEND MESSAGE STARTED")
 A.dL("USER ID: "+n.as)
 A.dL("\ud83d\udce1 Sending request to: "+A.k(l))
@@ -83766,7 +83766,7 @@ m=h
 l=i.gaF(e).b
 n.ai(new A.aiy(n,m,l))
 p=5
-k=A.aJj("POST",A.ew("https://rings-oklahoma-dna-sending.trycloudflare.com/upload-file?session_id="+n.as,0,null))
+k=A.aJj("POST",A.ew("https://publication-gods-delete-let.trycloudflare.com/upload-file?session_id="+n.as,0,null))
 e=k.y
 i=m
 h=A.ayX(i,t.Cm)
@@ -83797,7 +83797,7 @@ qI(a,b,c){return this.XW(a,b,c)},
 XW(a,b,c){var s=0,r=A.P(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
 var $async$qI=A.L(function(d,e){if(d===1){p.push(e)
 s=q}for(;;)switch(s){case 0:q=3
-l=A.ew("https://rings-oklahoma-dna-sending.trycloudflare.com/feedback",0,null)
+l=A.ew("https://publication-gods-delete-let.trycloudflare.com/feedback",0,null)
 k=t.N
 j=A.ap(["Content-Type","application/json"],k,k)
 s=6

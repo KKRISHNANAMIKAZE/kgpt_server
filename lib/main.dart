@@ -42,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
   Uint8List? selectedFileBytes;
   String? selectedFileName;
 
-  final String baseUrl = "https://electro-continuously-identifying-tour.trycloudflare.com"; 
+  final String baseUrl = "https://somewhere-compounds-start-magazines.trycloudflare.com"; 
   //String get sessionId =>
    // FirebaseAuth.instance.currentUser?.uid ?? "guest";
   String sessionId = "";
@@ -51,7 +51,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    initializeUser();
+    startup();
   }
 
   Future<void> initializeUser() async {
@@ -85,6 +85,29 @@ class _ChatScreenState extends State<ChatScreen> {
 
     }
 
+  }
+
+
+  Future<void> startup() async {
+    await initializeUser();
+    await loadHistory();
+  }
+
+  Future<void> loadHistory() async {
+
+    if (sessionId.isEmpty) return;
+
+    final response = await http.get(
+      Uri.parse("\$baseUrl/history/\$sessionId"),
+    );
+
+    final data = jsonDecode(response.body);
+
+    setState(() {
+      messages = List<Map<String, dynamic>>.from(
+        data["messages"] ?? [],
+      );
+    });
   }
 
   // ================= CHAT =================
